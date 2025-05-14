@@ -1,0 +1,16 @@
+// vite.config.js
+import { defineConfig, loadEnv } from "file:///E:/code/My%20own%20Project/portofolio/recipe/frontend/foodRecipe/node_modules/vite/dist/node/index.js";
+import preact from "file:///E:/code/My%20own%20Project/portofolio/recipe/frontend/foodRecipe/node_modules/@preact/preset-vite/dist/esm/index.mjs";
+var vite_config_default = defineConfig(({ mode }) => {
+  const env = loadEnv(mode, process.cwd(), "");
+  return {
+    define: {
+      "process.env": env
+    },
+    plugins: [preact()]
+  };
+});
+export {
+  vite_config_default as default
+};
+//# sourceMappingURL=data:application/json;base64,ewogICJ2ZXJzaW9uIjogMywKICAic291cmNlcyI6IFsidml0ZS5jb25maWcuanMiXSwKICAic291cmNlc0NvbnRlbnQiOiBbImNvbnN0IF9fdml0ZV9pbmplY3RlZF9vcmlnaW5hbF9kaXJuYW1lID0gXCJFOlxcXFxjb2RlXFxcXE15IG93biBQcm9qZWN0XFxcXHBvcnRvZm9saW9cXFxccmVjaXBlXFxcXGZyb250ZW5kXFxcXGZvb2RSZWNpcGVcIjtjb25zdCBfX3ZpdGVfaW5qZWN0ZWRfb3JpZ2luYWxfZmlsZW5hbWUgPSBcIkU6XFxcXGNvZGVcXFxcTXkgb3duIFByb2plY3RcXFxccG9ydG9mb2xpb1xcXFxyZWNpcGVcXFxcZnJvbnRlbmRcXFxcZm9vZFJlY2lwZVxcXFx2aXRlLmNvbmZpZy5qc1wiO2NvbnN0IF9fdml0ZV9pbmplY3RlZF9vcmlnaW5hbF9pbXBvcnRfbWV0YV91cmwgPSBcImZpbGU6Ly8vRTovY29kZS9NeSUyMG93biUyMFByb2plY3QvcG9ydG9mb2xpby9yZWNpcGUvZnJvbnRlbmQvZm9vZFJlY2lwZS92aXRlLmNvbmZpZy5qc1wiO2ltcG9ydCB7IGRlZmluZUNvbmZpZywgbG9hZEVudiB9IGZyb20gJ3ZpdGUnXG5pbXBvcnQgcHJlYWN0IGZyb20gJ0BwcmVhY3QvcHJlc2V0LXZpdGUnXG5cbi8vIGh0dHBzOi8vdml0ZWpzLmRldi9jb25maWcvXG5leHBvcnQgZGVmYXVsdCBkZWZpbmVDb25maWcoKHsgbW9kZSB9KSA9PiB7XG4gIGNvbnN0IGVudiA9IGxvYWRFbnYobW9kZSwgcHJvY2Vzcy5jd2QoKSwgJycpO1xuICByZXR1cm4ge1xuICAgIGRlZmluZToge1xuICAgICAgJ3Byb2Nlc3MuZW52JzogZW52XG4gICAgfSxcbiAgICBwbHVnaW5zOiBbcHJlYWN0KCldLFxuICB9XG59KSJdLAogICJtYXBwaW5ncyI6ICI7QUFBd1gsU0FBUyxjQUFjLGVBQWU7QUFDOVosT0FBTyxZQUFZO0FBR25CLElBQU8sc0JBQVEsYUFBYSxDQUFDLEVBQUUsS0FBSyxNQUFNO0FBQ3hDLFFBQU0sTUFBTSxRQUFRLE1BQU0sUUFBUSxJQUFJLEdBQUcsRUFBRTtBQUMzQyxTQUFPO0FBQUEsSUFDTCxRQUFRO0FBQUEsTUFDTixlQUFlO0FBQUEsSUFDakI7QUFBQSxJQUNBLFNBQVMsQ0FBQyxPQUFPLENBQUM7QUFBQSxFQUNwQjtBQUNGLENBQUM7IiwKICAibmFtZXMiOiBbXQp9Cg==

@@ -1,0 +1,958 @@
+#app {
+	padding: 0;
+	margin: 0;
+}
+* {
+	margin: 0;
+	box-sizing: border-box;
+}
+html {
+	height: 100%;
+	position: relative;
+}
+
+body {
+	min-height: 100vh;
+}
+button {
+	cursor: pointer;
+}
+.loginContainer {
+	min-height: 100vh;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	background-color: #ecdfb3;
+}
+.loginWrapper {
+	width: 60%;
+	padding: 6rem 4rem;
+	background-color: white;
+	box-shadow: 0em 0.1em 0.5em rgba(0, 0, 0, 0.6);
+}
+.loginWrapper .logo img,
+.verifyText .logo img {
+	width: clamp(5rem, 19vw, 15rem);
+	height: clamp(2rem, 8vw, 6rem);
+}
+
+.loginWrapper form {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+	margin-top: 2rem;
+	gap: 1rem;
+}
+.inputWrapper {
+	background: #f2f2f2;
+	width: 80%;
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+}
+
+.inputWrapper span {
+	margin-right: 1rem;
+	cursor: pointer;
+}
+.loginWrapper .otherButton {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	margin-top: 1rem;
+	gap: 1rem;
+}
+.loginWrapper input {
+	width: 80%;
+	padding: 1rem;
+	background-color: #f2f2f2;
+	border: none;
+	position: relative;
+	outline: none;
+}
+.textWarn {
+	background: #fae6e6;
+	width: 100%;
+	padding: .5rem;
+	text-align: left;
+}
+.loginWrapper button {
+	display: flex;
+	justify-content: center;
+	gap: .5rem;
+	width: 80%;
+	padding: .8rem;
+	font-size: 1rem;
+	font-weight: bold;
+	background-color: #0096ff;
+	border: none;
+}
+.registerButton {
+	display: flex;
+	justify-content: center;
+	gap: .5rem;
+	width: 80%;
+}
+.headerContainer {
+	min-height: 50px;
+	width: 100%;
+}
+.header,
+.footer {
+	background-color: #926843;
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	padding: .5rem 10rem;
+}
+.loader {
+	border: 3px solid #f3f3f3;
+	border-top: 3px solid #3498db;
+	border-radius: 50%;
+	width: 16px;
+	height: 16px;
+	animation: spin 2s linear infinite;
+}
+.loaderPage {
+	border: 20px solid #f3f3f3;
+	border-top: 20px solid #3498db;
+	border-radius: 50%;
+	width: 126px;
+	height: 126px;
+	animation: spin 2s linear infinite;
+}
+
+@keyframes spin {
+	0% {
+		transform: rotate(0deg);
+	}
+	100% {
+		transform: rotate(360deg);
+	}
+}
+.logo {
+	display: grid;
+	justify-items: center;
+}
+.linkLogo {
+	text-decoration: none;
+}
+.logo img {
+	width: 5rem;
+	height: 2.2rem;
+}
+.logo h4 {
+	-webkit-text-fill-color: white;
+	-webkit-text-stroke: .3px orange;
+	font-size: .9rem;
+}
+
+.logo h3 {
+	-webkit-text-fill-color: white;
+	-webkit-text-stroke: 1px orange;
+}
+
+.headerMenu {
+	padding-block: 1rem;
+}
+.headerMenu ul,
+.footerMenu ul {
+	display: flex;
+	gap: 2rem;
+}
+.headerMenu ul li,
+.footerMenu ul li {
+	list-style: none;
+}
+.headerMenu ul a,
+.footerMenu ul a {
+	text-decoration: none;
+	color: #ffffff;
+	font-size: 1.33rem;
+}
+.headerHero {
+	width: 100%;
+	height: 23rem;
+	position: relative;
+	isolation: isolate;
+}
+.headerHero .layer {
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	background-color: orange;
+	opacity: 0.25;
+}
+.headerHero .headerHeroText {
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%);
+	text-align: center;
+	font-size: 2rem;
+	width: 100%;
+	color: #f0eeed;
+}
+.headerHero img {
+	width: 100%;
+	height: 100%;
+	object-fit: cover;
+}
+.wholeWrapper {
+	display: flex;
+	flex-direction: column;
+	height: 100%;
+}
+.mealsCountryMain {
+	min-height: calc(100vh - 7rem);
+}
+.countryHero {
+	width: 100%;
+	height: clamp(3rem, 13vw, 10rem);
+	background-color: #ecdfb3;
+	padding-top: 3rem;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	gap: clamp(1rem, 2.5vw, 2rem);
+}
+.countryHero img {
+	height: 100%;
+}
+.countryHero .countryHeroText {
+	text-align: center;
+	font-size: clamp(1rem, 2.5vw, 2rem);
+	color: #000000;
+}
+.mealCountryHero {
+	background-color: #ffffff;
+}
+.mainWrapper {
+	min-height: calc(100vh - 7rem);
+	display: grid;
+	align-content: start;
+	grid-template-rows: auto;
+	position: relative;
+}
+.mainContainer {
+	display: grid;
+	justify-content: center;
+	/* align-items: center; */
+	gap: clamp(1rem, 2.5vw, 3rem);
+	padding: 2rem 6rem;
+}
+.mainContainerCenter {
+	display: grid;
+	justify-content: center;
+	align-items: center;
+	/* margin-top: 50%; */
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+}
+.verifyText {
+	justify-self: center;
+	display: flex;
+	width: 80%;
+	flex-direction: column;
+	align-items: center;
+	box-shadow: 0em 0.1em 0.5em rgba(0, 0, 0, 0.6);
+	padding: 5rem 3rem;
+	background-color: white;
+}
+.notFound {
+	background: #ecdfb3;
+	margin-top: 0;
+}
+.notFoundTtext {
+	text-align: center;
+}
+.textHeader {
+	text-align: center;
+	font-size: clamp(.8rem, 1.9vw, 1.5rem);
+}
+.withButton {
+	position: relative;
+}
+.withButton .button {
+	position: absolute;
+	right: 0;
+	top: 50%;
+	transform: translateY(-50%);
+	background: #ac4608;
+	padding: .1rem 1rem;
+	border-radius: 8px;
+	color: white;
+	text-decoration: none;
+}
+.mainContainer .cardContainer {
+	display: grid;
+	grid-template-columns: repeat(3, 1fr);
+	gap: 3rem;
+}
+.cardMenu {
+	display: grid;
+	gap: .8rem;
+}
+.cardMenu img {
+	height: auto;
+	width: 100%;
+}
+.cardMenu .cardDetail {
+	display: grid;
+	gap: .5rem;
+	padding-inline: .5rem;
+	position: relative;
+}
+.cardDetail .userLink {
+	position: absolute;
+	top: 0;
+	right: 0;
+	text-decoration: none;
+	color: #000000;
+	display: flex;
+	gap: .3rem;
+	align-items: center;
+}
+.userLink {
+}
+.userLink .userPic {
+	height: clamp(1rem, 1.9vw, 1.5rem);
+	width: clamp(1rem, 1.9vw, 1.5rem);
+	border-radius: 50%;
+	background: #926843;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	color: white;
+}
+.userLink h5 {
+	font-size: clamp(.7rem, 1.2vw, .9rem);
+}
+.cardDetail .cardCountry {
+	display: flex;
+	align-items: center;
+	gap: .5rem;
+}
+.cardCountry img {
+	width: clamp(1rem, 2.5vw, 2rem);
+	height: clamp(.9rem, 2vw, 1.5rem);
+	border: .1px solid grey;
+}
+.cardCountry h5 {
+	font-size: clamp(.7rem, 1.6vw, 1.25rem);
+	font-weight: lighter;
+}
+.cardContainer .dataLink {
+	text-decoration: none;
+	color: black;
+}
+.cardContainer .flagLink {
+	text-decoration: none;
+	color: black;
+}
+.cardDetail h3 {
+	font-size: clamp(.7rem, 1.9vw, 1.5rem);
+}
+.homeBanner {
+	width: 100%;
+	height: clamp(10rem, 37vw, 30rem);
+	margin-top: 2rem;
+	position: relative;
+}
+.homeBanner .bannerImage {
+	width: 100%;
+	height: 100%;
+	object-fit: cover;
+}
+.homeBanner h2 {
+	position: absolute;
+	top: 50%;
+	right: 0;
+	font-size: clamp(.5rem, 3.7vw, 3rem);
+	width: clamp(15rem, 57.4vw, 47rem);
+	text-align: center;
+	line-height: clamp(1.7rem, 6.1vw, 5rem);
+	transform: translateY(-50%);
+	color: white;
+}
+.mealsContainer {
+	background-color: #ecdfb3;
+}
+.footer .citation {
+	color: #ffffffff;
+	font-size: 1.33rem;
+}
+.footer {
+}
+.recipeDetail {
+	background-color: #fef8f8;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	padding: 12vh 0;
+}
+.boxShadow {
+	background-color: white;
+	box-shadow: 0em 0.1em 0.5em rgba(0, 0, 0, 0.6);
+	border-radius: 3px;
+	padding-block: 3rem;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	width: 82%;
+}
+.recipeDetailContainer {
+	width: 85%;
+	display: grid;
+	gap: 3rem;
+}
+.recipeDetailContainer .recipeImage {
+	width: 100%;
+	height: clamp(15rem, 37vw, 30rem);
+	object-fit: cover;
+	object-position: 50% 50%;
+}
+.confButton {
+	display: flex;
+	justifyContent: center;
+	// gap: 3rem;
+	marginTop: 2rem;
+}
+.cancelButton {
+	backgroundColor: #ccc;
+	color: black;
+	opacity: 0.9;
+	float: left;
+	width: 50%;
+	cursor: pointer;
+	padding: 14px 20px;
+}
+.modalDelButton {
+	backgroundColor: #f44336;
+	color: white;
+	opacity: 0.9;
+	float: left;
+	width: 50%;
+	cursor: pointer;
+	padding: 14px 20px;
+}
+.overlay {
+	position: fixed;
+	top: 0;
+	left: 0;
+	right: 0;
+	bottom: 0;
+	backgroundColor: rgba(0, 0, 0, 0.7);
+	display: flex;
+	alignItems: center;
+	justifyContent: center;
+}
+.modal {
+	backgroundColor: white;
+	padding: 20px;
+	// borderRadius: 8px;
+	position: relative;
+	width: 80%;
+	maxWidth: 500px;
+	textAlign: center;
+}
+.closeButton {
+	position: absolute;
+	top: 10px;
+	right: 10px;
+	background: transparent;
+	border: none;
+	fontSize: 18px;
+	cursor: pointer;
+}
+.contentContainer {
+	display: flex;
+}
+.contentContainer .recipeContent {
+	width: 75%;
+}
+.contentContainer .countryDetail {
+	width: 25%;
+}
+.recipeContent {
+	display: grid;
+	gap: 1rem;
+}
+.recipeContent .menuDetails {
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+}
+.menuDetails .menuUtils {
+	display: flex;
+	gap: clamp(.8rem, 1.3vw, 1rem);
+}
+.menuUtils .utils {
+	display: flex;
+	align-items: center;
+	gap: .3rem;
+}
+.recipeContent .menuDescription {
+	text-align: justify;
+}
+.recipeContent .Todo {
+	padding-left: 2rem;
+	display: grid;
+	gap: 1rem;
+}
+.Todo ul {
+	padding-left: 2rem;
+}
+.Todo ul li:not(:last-child) {
+	margin-bottom: 10px;
+}
+.recipeInstruction ul {
+	list-style-type: decimal;
+	text-align: justify;
+}
+.menuDetails .menuName {
+	font-size: clamp(.8rem, 3.1vw, 2.5rem);
+}
+.iconUtil,
+.utils p {
+	font-size: clamp(.8rem, 1.4vw, 1rem);
+}
+.contentContainer .countryDetail {
+	display: flex;
+	justify-content: end;
+	gap: .3rem;
+}
+.buttonGroup {
+	display: flex;
+	justify-content: end;
+	gap: 1rem;
+}
+.updateButton {
+	padding: .9rem 1.5rem;
+	background: #00a84d;
+	text-decoration: none;
+	color: white;
+	border: none;
+}
+.deleteButton {
+	padding: .9rem 1.5rem;
+	background: #c10000;
+	color: white;
+	border: none;
+}
+.countryDetail .flag {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	gap: .3rem;
+}
+.countryDetail img {
+	width: clamp(.8rem, 10vw, 8rem);
+}
+.countryDetail h5 {
+	font-size: clamp(.8rem, 1.5vw, 1.2rem);
+}
+.countryContainer {
+	display: grid;
+	grid-template-columns: repeat(5, 1fr);
+	gap: clamp(.5rem, 3.7vw, 3rem);
+}
+.countryContainer .countryLink {
+	text-decoration: none;
+	color: black;
+}
+.countryContent h5 {
+	font-size: clamp(.5rem, 1.1vw, .9rem);
+}
+.countryContent img {
+	border: 1px solid grey;
+}
+.pagination {
+	width: 100%;
+	display: flex;
+	justify-content: center;
+	gap: 2rem;
+}
+.pagination button {
+	padding: .1rem .5rem;
+	border: none;
+}
+.userHero {
+	background: #ffffff;
+	height: clamp(8rem, 25vw, 15rem);
+	padding-top: 3rem;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	gap: clamp(1rem, 2.5vw, 2rem);
+}
+.userHero .userAvatar {
+	height: clamp(6rem, 13vw, 11rem);
+	width: clamp(6rem, 13vw, 11rem);
+	background: #926843;
+	border-radius: 50%;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+.userAvatar .countryHeroImg {
+	height: 80%;
+	width: 80%;
+	color: white;
+	/* object-fit: cover; */
+	/* border-radius: 50%; */
+	/* background: grey; */
+}
+.userHero .countryHeroText {
+	text-align: center;
+	font-size: clamp(1rem, 2.5vw, 2rem);
+	color: #000000;
+}
+.userHero .userDetail {
+	text-align: left;
+}
+.formContainer form {
+	display: grid;
+	gap: 1.5rem;
+}
+.formInput {
+	display: grid;
+	gap: .5rem;
+	width: 65%;
+}
+.formInput input,
+.formInput select {
+	height: 2.5rem;
+	padding-inline: .2rem;
+}
+.textWarnInput {
+	background: #fae6e6;
+	padding: .5rem;
+	text-align: left;
+}
+.dropDownTime {
+	display: grid;
+	grid-template-columns: repeat(auto-fit, minmax(170px, 1fr));
+}
+.dropDownTime #cookTime {
+}
+.dropDownTime div {
+	display: grid;
+}
+.menuPictContainer {
+	border: 1px solid black;
+	padding: .5rem;
+}
+.menuPictContainer #menuPict {
+	height: 100%;
+	display: inline-block;
+	place-self: center;
+}
+.formInput .in {
+	display: flex;
+	gap: .5rem;
+	align-items: center;
+}
+.in .amountNumber {
+	width: 25%;
+}
+.in h3 {
+	cursor: pointer;
+}
+.amountNumber #mount {
+	width: 100%;
+}
+#ingredientsName,
+#instruction {
+	width: 100%;
+}
+.saveButton {
+	width: 65%;
+	padding: .7rem 2rem;
+	border: none;
+	background: #20c6fb;
+	color: black;
+	font-weight: bold;
+	display: flex;
+	justify-content: center;
+	gap: .5rem;
+}
+
+@media screen and (max-width: 968px) {
+	.loginWrapper {
+		width: 70%;
+		padding: 6rem 2rem;
+	}
+	.loginWrapper input {
+		padding: 1rem;
+	}
+	.loginWrapper button {
+		padding: .7rem;
+		font-size: .8rem;
+	}
+}
+@media screen and (max-width: 880px) {
+	.header,
+	.footer {
+		padding-inline: 6rem;
+	}
+	.logo img {
+		width: clamp(4rem, 10vw, 5rem);
+		height: clamp(1.2rem, 6vw, 2.2rem);
+	}
+	.logo h4 {
+		font-size: .6rem;
+	}
+	.headerMenu,
+	.footerMenu {
+		padding-block: 1rem;
+	}
+	.headerMenu ul,
+	.footerMenu ul {
+		gap: clamp(1rem, 3.5vw, 2rem);
+	}
+	.headerMenu ul a,
+	.footerMenu ul a,
+	.citation p {
+		font-size: clamp(.8rem, 2vw, 1.3rem);
+	}
+	.headerHero {
+		height: clamp(15rem, 53vw, 30rem);
+	}
+	.headerHero .headerHeroText {
+		font-size: clamp(.9rem, 3vw, 2rem);
+	}
+	.mainContainer {
+		padding: 1rem 4rem;
+	}
+	.formInput {
+		width: 80%;
+	}
+}
+@media screen and (max-width: 768px) {
+	.mainContainer .cardContainer {
+		gap: 2rem;
+	}
+	.boxShadow {
+		padding-top: 3rem;
+		width: 90%;
+	}
+
+	.recipeDetailContainer {
+		width: 90%;
+	}
+	.buttonGroup {
+		display: flex;
+		justify-content: end;
+		gap: 1rem;
+		margin-right: clamp(2rem, 20vw, 8rem);
+	}
+	.updateButton,
+	.deleteButton {
+		padding: .7rem 1rem;
+		font-size: clamp(.6rem, 2.5vw, .8rem);
+	}
+
+	.contentContainer {
+		display: initial;
+		position: relative;
+	}
+	.contentContainer .recipeContent {
+		width: 100%;
+	}
+	.recipeContent .menuDetails {
+		flex-direction: column;
+		gap: 1rem;
+		align-items: start;
+	}
+	.menuDetails .menuName,
+	.Todo h2 {
+		font-size: clamp(1.2rem, 4vw, 2.5rem);
+	}
+	.contentContainer .countryDetail {
+		position: absolute;
+		top: 0;
+		right: 0;
+	}
+	.countryDetail img {
+		width: clamp(.8rem, 13vw, 4rem);
+	}
+	.countryDetail h5 {
+		font-size: clamp(.7rem, 2.5vw, 1rem);
+	}
+	.footer {
+	}
+}
+@media screen and (max-width: 660px) {
+	.loginWrapper {
+		width: 75%;
+		padding: 6rem 1rem;
+	}
+	.footer {
+		padding-inline: 3.5rem;
+	}
+	.footerMenu ul a,
+	.citation p {
+		font-size: clamp(.7rem, 2vw, 1.1rem);
+	}
+	.countryHero {
+		padding-top: 2rem;
+	}
+	.mainContainer {
+		padding: 1rem 2rem;
+	}
+
+	.mainContainer .cardContainer {
+		gap: 1rem;
+	}
+
+	.recipeDetail {
+		padding: 5vh 0;
+	}
+	.boxShadow {
+		padding-block: 2.5rem;
+	}
+	.menuDescription p {
+		line-height: 1.7rem;
+	}
+	.recipeContent .Todo {
+		padding-left: 0rem;
+	}
+	.Todo ul {
+		padding-left: 1.5rem;
+	}
+	.Todo ul li {
+		line-height: 1.7rem;
+	}
+	.userLink h5 {
+		display: none;
+	}
+	.userHero {
+		padding-top: 1.5rem;
+	}
+	.formInput {
+		width: 90%;
+	}
+}
+@media screen and (max-width: 490px) {
+	.registerButton {
+		display: flex;
+		flex-direction: column;
+		justify-content: center;
+		align-items: center;
+		gap: .5rem;
+		width: 80%;
+	}
+	.header {
+		padding: .1rem 3rem;
+	}
+	.countryHero {
+		padding-top: 1rem;
+	}
+	.footer {
+		padding: .1rem 1rem;
+	}
+
+	.logo img {
+		width: clamp(3rem, 8vw, 4.3rem);
+		height: clamp(1.5rem, 5vw, 2.5rem);
+	}
+	.logo h4 {
+		font-size: .5rem;
+	}
+	.headerMenu,
+	.footerMenu {
+		padding-block: 1rem;
+	}
+	.headerMenu ul,
+	.footerMenu ul {
+		gap: clamp(1rem, 3.5vw, 2rem);
+	}
+	.headerMenu ul a {
+		font-size: clamp(.8rem, 2vw, 1rem);
+	}
+	.footerMenu ul a,
+	.footer .citation p {
+		font-size: clamp(.6rem, 2vw, 1rem);
+	}
+	.headerHero {
+		height: clamp(10rem, 50vw, 25rem);
+	}
+	.headerHero .headerHeroText {
+		font-size: clamp(.9rem, 3vw, 2rem);
+	}
+	.mainContainer {
+		padding: .7rem 1rem;
+	}
+	.mainContainer .cardContainer {
+		grid-template-columns: repeat(2, 1fr);
+		gap: 1rem;
+	}
+	.cardMenu {
+		display: grid;
+		gap: .7rem;
+	}
+	.cardImage {
+		width: 100%;
+	}
+	.cardMenu .cardDetail {
+		gap: .3rem;
+	}
+	.cardCountry img {
+		width: clamp(1.3rem, 3.5vw, 2rem);
+		height: clamp(1.2rem, 4vw, 1.5rem);
+	}
+	.cardCountry h5 {
+		font-size: clamp(.8rem, 1.6vw, 1.25rem);
+	}
+
+	.cardDetail h3 {
+		font-size: clamp(.9rem, 1.9vw, 1.5rem);
+	}
+	.recipeContent .Todo {
+		padding-left: .5rem;
+	}
+	.updateButton {
+		padding: .6rem 1.1rem;
+	}
+	.deleteButton {
+		padding: .6rem .8rem;
+	}
+	.Todo ul {
+		padding-left: 1.2rem;
+	}
+	.formInput {
+		width: 100%;
+	}
+}
+@media screen and (max-width: 380px) {
+	.header,
+	.footer {
+		padding-inline: 1.5rem;
+	}
+	.logo img {
+		width: clamp(3.2rem, 8vw, 3.5rem);
+		height: clamp(1.5rem, 5vw, 3.5rem);
+	}
+	.logo h4 {
+		font-size: .5rem;
+	}
+	.headerHero .headerHeroText {
+		font-size: clamp(.7rem, 3.5vw, 1.5rem);
+	}
+	.cardCountry img {
+		width: 1.3rem;
+		height: 1.2rem;
+	}
+	.cardCountry h5 {
+		font-size: .7rem;
+	}
+	.cardDetail h3 {
+		font-size: .9rem;
+	}
+}
